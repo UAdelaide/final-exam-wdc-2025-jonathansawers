@@ -1,11 +1,8 @@
 body {
   background: linear-gradient(45deg, red, yellow, lime);
+  font-color: lime;
   font-family: Comic Sans, cursive;
   animation: flash 1s infinite;
-}
-
-a {
-  color: #00B7FF;
 }
 
 .button-dup {
