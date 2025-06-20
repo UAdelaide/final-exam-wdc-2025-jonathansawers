@@ -73,9 +73,11 @@ app.get('/api/dogs', async (req, res) => {
         `);
     res.json(results);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
+
+// /api
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
