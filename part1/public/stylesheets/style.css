@@ -15,7 +15,8 @@ a {
 }
 
 img {
-
+  width: 300px;
+  border: 5px dashed cyan;
 }
 
 button {
