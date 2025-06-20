@@ -46,8 +46,10 @@ app.post('/login', async (req, res) => {
 
     try {
         const [rows] = await db.execute(`
+            SELECT * FROM Users WHERE username=?
+            `, username);
 
-            `)
+        if 
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
