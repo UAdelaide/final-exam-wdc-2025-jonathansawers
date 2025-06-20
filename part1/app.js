@@ -48,6 +48,8 @@ let db;
             ('jono', 'jono@jono.com', 'hashedpassword', 'owner'),
             ('pratik', 'tutor@adelaide.edu.au', 'hashed1234', 'owner')
             `);
+
+        const 
     }
 
   } catch (err) {
