@@ -49,13 +49,13 @@ app.post('/login', async (req, res) => {
             SELECT * FROM Users WHERE username=?
             `, username);
 
-        if (rows.length === 0) {
-            return res.status(401).send("invalid user");
+        if (rows.length === 0 || rows[0].password_hash !== password) {
+            return res.status(401).send("Invalid username or password");
         }
 
         const user = rows[0];
 
-        const valid = 
+        const valid =
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
