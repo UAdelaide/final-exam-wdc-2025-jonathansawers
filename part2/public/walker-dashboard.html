@@ -53,7 +53,7 @@
               throw new Error('failed to get user info');
             }
             const data = await res.json();
-            user.value = data.user_id;
+            user.value = data;
           } catch (err){
             error.value = 'Unable to fetch user info';
           }
@@ -71,7 +71,6 @@
 
         async function applyToWalk(requestId) {
           try {
-            console.log('user value', user.value);
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
