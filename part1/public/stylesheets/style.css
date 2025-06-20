@@ -35,7 +35,5 @@ button {
   transition: all 0.2s ease;
   padding: 10px;
   font-size: 12px;
-  background-color: #ff69b4;
-  border: 2px solid black;
   cursor: pointer;
 }
