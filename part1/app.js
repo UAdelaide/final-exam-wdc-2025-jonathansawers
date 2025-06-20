@@ -6,7 +6,8 @@ var db = require('./db')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var dog
+var dogRouter = require('./routes/dogs');
+var walkRequestsRouter = require('./routes/w')
 
 var app = express();
 
