@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const db = mysql.createConnection({
-
+    host: 'localhost',
 });
 
-db.connect(err => {
+db.connect((err) => {
     if (err) throw err;
     console.log("Mysql connected");
 });
