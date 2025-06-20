@@ -11,7 +11,7 @@
         <h1>DOG OF THE DAY</h1>
         <img :src="dogImg">
             <div class="button-dup">
-                <button @mouseenter="moveButton(index)" class="evasive-button" v-for="n in 50" type="button" @click="getDoggo">get doggo</button>
+                <button @mouseenter="moveButton(index)" class="evasive-button" v-for="(btn, index) in buttons" type="button" @click="getDoggo">get doggo</button>
             </div>
     </div>
     <script>
