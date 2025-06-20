@@ -96,8 +96,16 @@ app.get('/logout', async (req,res) => {
 // Route for fetching users dogs
 app.get('/my-dogs', async (req,res) => {
   if (!req.session.user_id) {
-    return res.
+    return res.status(401).json({ error:'no session' });
   }
+
+  try {
+
+  } catch (err) {
+    console.error(err);
+    return res.status
+  }
+
 });
 
 app.use('/api/walks', walkRoutes);
