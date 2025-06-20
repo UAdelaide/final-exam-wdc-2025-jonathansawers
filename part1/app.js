@@ -62,7 +62,7 @@ let db;
   }
 })();
 
-// Route to return books as JSON
+// /api/dogs route
 app.get('/', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
