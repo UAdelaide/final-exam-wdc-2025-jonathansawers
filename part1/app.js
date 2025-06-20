@@ -66,7 +66,9 @@ let db;
 // Returns a list of all dogs with their size and owners username
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [results] = await db.execute('SELECT * FROM books');
+    const [results] = await db.execute(`
+        SELECT d.name AS dog_name,
+        `);
     res.json(books);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
