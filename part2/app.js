@@ -100,7 +100,8 @@ app.get('/my-dogs', async (req,res) => {
   }
 
   try {
-    const 
+    const [rows] = await db.execute(``, [req.session.user_id]);
+    return res.json(rows);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: "Failed to load dogs" });
