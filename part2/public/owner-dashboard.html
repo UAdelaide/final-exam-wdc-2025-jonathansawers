@@ -80,9 +80,14 @@
           location: ''
         });
 
+        const myDogs = ref([]);
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
+
+        async function loadMyDogs() {
+
+        }
 
         async function loadWalks() {
           try {
