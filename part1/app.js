@@ -79,7 +79,7 @@ app.get('/api/dogs', async (req, res) => {
 
 // /api/walkrequests/open
 // Return all open walk requests, including dog name, requested time, location, owner username
-
+app.get('/api/walkrequests/open', async ())
 
 
 // /api/walkers/summary
