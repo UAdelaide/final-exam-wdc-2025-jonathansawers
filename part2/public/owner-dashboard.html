@@ -86,7 +86,12 @@
         const error = ref('');
 
         async function loadMyDogs() {
-
+          try {
+            const res = await fetch('/api/my-dogs');
+            myDogs.value = await res.json();
+          } catch (err) {
+            
+          }
         }
 
         async function loadWalks() {
