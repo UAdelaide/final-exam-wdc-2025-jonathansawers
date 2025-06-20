@@ -68,10 +68,12 @@
               const imgData = await imgRes.json();
               return {
                 ...dog,
-                image: imgData.message;
-              }
+                image: imgData.message
+              };
             })
-          )
+          );
+
+          this.dogs = dogsImg;
         } catch (err) {
           console.error('Error loading dog data ', err);
         }
