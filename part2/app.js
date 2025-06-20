@@ -93,14 +93,11 @@ app.get('/logout', async (req,res) => {
   });
 });
 
-// /api/dogs route
-// Returns a list of all dogs with their size and owners username
 app.get('/api/dogs', async (req, res) => {
   try {
     const [results] = await db.execute(`
-        SELECT d.name AS dog_name, d.size, u.username AS owner_username
+        SELECT d.dog_id, d.name AS dog_name, d.size, d.owner_id
         FROM Dogs d
-        JOIN Users u ON d.owner_id = u.user_id
         `);
     res.json(results);
   } catch (err) {
