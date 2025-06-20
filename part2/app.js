@@ -41,8 +41,10 @@ let db;
 })();
 
 // Login route
-app.get('/api/dogs', async (req, res) => {
-  try {
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
 
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch dogs' });
