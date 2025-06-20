@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(45deg, red, yellow, lime);
-  color: cyan;
+  color: rgb(255, 0, 255);
   font-family: Comic Sans, cursive;
   animation: flash 1s infinite;
 }
