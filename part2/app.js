@@ -95,8 +95,8 @@ app.get('/logout', async (req,res) => {
 
 // Route for fetching users dogs
 app.get('/my-dogs', async (req,res) => {
-  if (!req.session.user_id || req.session.role !== 'owner') {
-
+  if (!req.session.user_id) {
+    return res.
   }
 });
 
