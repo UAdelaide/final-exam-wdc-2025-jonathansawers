@@ -78,15 +78,16 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Logout route
 app.post('/logout', async (req,res) => {
-
+  // Destroy session, and catch error
   req.session.destroy((err) => {
     if (err) {
       console.error('Failed to destroy session');
       return res.status(500).send("Could not destroy session");
     }
     res.clearCookie('connect.sid');
-    res.redirect('/');
+    return res.redirect('/');
   });
 });
 
