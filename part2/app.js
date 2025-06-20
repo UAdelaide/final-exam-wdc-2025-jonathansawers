@@ -95,12 +95,14 @@ app.get('/logout', async (req,res) => {
 
 // Route for fetching users dogs
 app.get('/my-dogs', async (req,res) => {
+  // Check that user id exists
   if (!req.session.user_id) {
     return res.status(401).json({ error:'no session' });
   }
 
+  // Try return list of dog-id/name
   try {
-    const [rows] = await db.execute(``, [req.session.user_id]);
+    const [rows] = await db.execute(`SELECT dog_id, name FROM Dogs WHERE owner_id=?`, [req.session.user_id]);
     return res.json(rows);
   } catch (err) {
     return res.status(500).json({ error: "Failed to load dogs" });
