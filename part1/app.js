@@ -69,13 +69,13 @@ let db;
 
         await db.execute(`
             INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
-            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Max')),
+            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Hamilton')),
              (SELECT user_id FROM Users WHERE username='bobwalker'), 'pending'),
 
             ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Bella')),
              (SELECT user_id FROM Users WHERE username='bobwalker'), 'accepted'),
 
-            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Hamilton')),
+            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Max')),
              (SELECT user_id FROM Users WHERE username='bobwalker'), 'accepted');
         `);
 
