@@ -59,7 +59,10 @@
       },
       async mounted() {
         try {
+          const res = await fetch('/api/dogs');
+          const dogList = await res.json();
 
+          const 
         } catch (err) {
           console.error('Error loading dog data ', err);
         }
