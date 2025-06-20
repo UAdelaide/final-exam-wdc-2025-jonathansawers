@@ -9,6 +9,7 @@
 <body>
     <h1>DOG OF THE DAY</h1>
     <div class="button-dup">
+        
         <button type="button" @click="getDoggo">get doggo</button>
     </div>
     <script>
@@ -25,7 +26,7 @@
                 async getDoggo() {
                     const res = await fetch('https://dog.ceo/api/breeds/image/random');
                     const data = await res.json();
-                    this.dogI
+                    this.dogImg = data.message;
                 }
             }
         })
