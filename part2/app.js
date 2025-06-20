@@ -94,7 +94,7 @@ app.get('/logout', async (req,res) => {
 });
 
 // Route for fetching users dogs
-app.get('/my-dogs', async (req,res) => {
+app.get('/api/my-dogs', async (req,res) => {
   // Check that user id exists
   if (!req.session.user_id) {
     return res.status(401).json({ error: 'no session' });
