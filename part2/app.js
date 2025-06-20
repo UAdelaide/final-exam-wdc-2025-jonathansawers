@@ -49,9 +49,10 @@ let db;
 
 // Login route
 app.post('/login', async (req, res) => {
+    // Get username/password from request header
     const { username, password } = req.body;
-
     try {
+        // Run query on DB to check for username
         const [rows] = await db.execute(`
             SELECT * FROM Users WHERE username=?
             `, [username]);
