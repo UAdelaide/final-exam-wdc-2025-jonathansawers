@@ -47,7 +47,7 @@ app.post('/login', async (req, res) => {
     try {
         const [rows] = await db.execute(`
             SELECT * FROM Users WHERE username=?
-            `, username);
+            `, [username]);
 
         if (rows.length === 0 || rows[0].password_hash !== password) {
             return res.status(401).send("Invalid username or password");
