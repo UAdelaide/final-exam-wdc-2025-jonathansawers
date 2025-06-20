@@ -12,7 +12,7 @@
   <div id="app" class="container py-5">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
 
-    <form>
+    <form method="POST" action="/login">
       <label for="username" class="form-label">Username</label>
       <input v-model="username" type="text" id="username" class="form-control" required>
     </form>
