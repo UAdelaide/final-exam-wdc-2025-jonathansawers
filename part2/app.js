@@ -46,9 +46,9 @@ app.post('/login', async (req, res) => {
 
     try {
 
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
-  }
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch dogs' });
+    }
 });
 
 app.use('/api/walks', walkRoutes);
