@@ -66,6 +66,26 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name='Fernando'), '2025-02-15 08:00:00', 40, 'McDonalds', 'cancelled'),
             ((SELECT dog_id FROM Dogs WHERE name='Hamilton'), '2024-11-11 08:00:00', 20, 'Mercedes Lane', 'completed');
             `);
+
+        await db.execute(`
+            INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
+            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Max')),
+             (SELECT user_id FROM Users WHERE username='bobwalker'), 'pending'),
+
+            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Bella')),
+             (SELECT user_id FROM Users WHERE username='bobwalker'), 'accepted'),
+
+            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Hamilton')),
+             (SELECT user_id FROM Users WHERE username='bobwalker'), 'accepted');
+        `);
+
+        await db.execute(`
+            INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+            ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name='Hamilton')),
+             (SELECT user_id FROM Users WHERE username='bobwalker'),
+             (SELECT user_id FROM Users WHERE username='bobwalker'),
+             4, 'Nice quick walk.');
+        `);
     }
 
   } catch (err) {
