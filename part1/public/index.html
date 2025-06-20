@@ -30,8 +30,11 @@
                     const data = await res.json();
                     this.dogImg = data.message;
                 }
+            },
+            mounted() {
+                this.getDoggo();
             }
-        })
+        }).mount('#app');
     </script>
 </body>
 </html>
