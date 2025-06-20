@@ -83,7 +83,7 @@ app.get('/api/dogs', async (req, res) => {
 
 
 // /api/walkers/summary
-// Return a summary of 
+// Return a summary of each walker with their avg rating/number of completed walks
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
