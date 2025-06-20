@@ -78,6 +78,12 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('/logout', async (req,res) => {
+
+  
+
+});
+
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
