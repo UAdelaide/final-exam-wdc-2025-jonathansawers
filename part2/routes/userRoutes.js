@@ -29,7 +29,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/me', (req, res) => {
-  if (!req.session.user) {
+  if (!req.session.user_id) {
     return res.status(401).json({ error: 'Not logged in' });
   }
   res.json(req.session.user);
