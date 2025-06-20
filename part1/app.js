@@ -84,12 +84,20 @@ app.get('/api/walkrequests/open', async (req, res) => {
         const [results] = await db.execute(``);
         res.json(results);
     } catch (err) {
-        res.status(500).json({ error: 'Failed to fetch walker summaries ' });
+        res.status(500).json({ error: 'Failed to fetch open walk requests ' });
     }
 });
 
 // /api/walkers/summary
 // Return a summary of each walker with their avg rating/number of completed walks
+app.get('/api/walkrequests/open', async (req, res) => {
+    try {
+        const [results] = await db.execute(``);
+        res.json(results);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch walker summaries ' });
+    }
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
