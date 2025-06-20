@@ -36,10 +36,10 @@
       <tbody>
         <tr v-for="dog in dogs" :key="dog.dog_id">
           <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.dog_name }}</td>
           <td>{{ dog.dog_id }}</td>
           <td>{{ dog.dog_id }}</td>
-          <td>{{ dog.dog_id }}</td>
-          
+          <td><img :src="dog.image"></td>
         </tr>
       </tbody>
     </table>
