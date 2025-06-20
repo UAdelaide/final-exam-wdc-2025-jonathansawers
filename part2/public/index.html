@@ -33,7 +33,15 @@
         <th>Photo</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr v-for="dog in dogs" :key="dog.dog_id">
+          <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.dog_id }}</td>
+          
+        </tr>
+      </tbody>
     </table>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
