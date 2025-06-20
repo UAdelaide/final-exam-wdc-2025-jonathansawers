@@ -62,6 +62,7 @@ app.post('/login', async (req, res) => {
         }
         return res.redirect('/walker-dashboard.html');
     } catch (err) {
+        console.error(err);
         res.status(500).json({ error: 'An error occured' });
     }
 });
