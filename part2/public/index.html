@@ -62,7 +62,11 @@
           const res = await fetch('/api/dogs');
           const dogList = await res.json();
 
-          const 
+          const dogsImg = await Promise.all(
+            dogList.map(async(dog) => {
+              
+            })
+          )
         } catch (err) {
           console.error('Error loading dog data ', err);
         }
