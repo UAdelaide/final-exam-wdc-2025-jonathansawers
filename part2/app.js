@@ -79,7 +79,7 @@ app.post('/login', async (req, res) => {
 });
 
 // Logout route
-app.post('/logout', async (req,res) => {
+app.get('/logout', async (req,res) => {
   // Destroy session, and catch error
   req.session.destroy((err) => {
     if (err) {
