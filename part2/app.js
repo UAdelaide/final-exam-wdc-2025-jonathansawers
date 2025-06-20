@@ -54,8 +54,13 @@ app.post('/login', async (req, res) => {
         }
 
         const user = rows[0];
+        req.session.user_id = user.user_id;
+        req.session.role = user.role;
 
-        const valid =
+        if (user.role === 'owner') {
+            return res.redirect('/owner-dashboard.html');
+        }
+        return res.redirect('/walker-dashboard.html');
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
     }
