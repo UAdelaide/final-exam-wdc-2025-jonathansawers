@@ -57,14 +57,17 @@ app.post('/login', async (req, res) => {
             SELECT * FROM Users WHERE username=?
             `, [username]);
 
+            // Check that username/pw are valid
         if (rows.length === 0 || rows[0].password_hash !== password) {
             return res.status(401).send("Invalid username or password");
         }
 
+        // Set session details
         const user = rows[0];
         req.session.user_id = user.user_id;
         req.session.role = user.role;
 
+        // Redirect user to correct page
         if (user.role === 'owner') {
             return res.redirect('/owner-dashboard.html');
         }
