@@ -53,6 +53,7 @@
               throw new Error('failed to get user info');
             }
             const data = await res.json();
+            console.log('suser data',data);
             userId.value = data.user_id;
           } catch (err){
             error.value = 'Unable to fetch user info';
