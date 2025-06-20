@@ -15,7 +15,9 @@ a {
 }
 
 @keyframes flash {
-  0%
+  0% { filter: brightness(1); }
+  50% { filter: brightness(2); }
+  100% { filter: brightness(1); }
 }
 
 img {
