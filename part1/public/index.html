@@ -20,9 +20,10 @@
         createApp({
             data() {
                 return {
-                    dogImg: ''
+                    dogImg: '',
                     buttons: Array.from({ length: 10 }, () => ({
-                        
+                        top: Math.random() * 20,
+                        left: Math.random() * 60
                     }))
                 };
             },
