@@ -57,6 +57,15 @@ let db;
             ((SELECT user_id FROM Users WHERE username='pratik'), 'Fernando', 'large'),
             ((SELECT user_id FROM Users WHERE username='bobwalker'), 'Hamilton', 'medium');
             `);
+
+        await db.execute(`
+            INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+            ((SELECT dog_id FROM Dogs WHERE name='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+            ((SELECT dog_id FROM Dogs WHERE name='Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+            ((SELECT dog_id FROM Dogs WHERE name='Rossie'), '2025-01-18 08:00:00', 60, 'The Braggs', 'open'),
+            ((SELECT dog_id FROM Dogs WHERE name='Fernando'), '2025-02-15 08:00:00', 40, 'McDonalds', 'cancelled'),
+            ((SELECT dog_id FROM Dogs WHERE name='Hamilton'), '2024-11-11 08:00:00', 20, 'Mercedes Lane', 'completed');
+            `);
     }
 
   } catch (err) {
