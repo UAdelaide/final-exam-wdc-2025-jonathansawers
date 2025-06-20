@@ -81,7 +81,9 @@ app.get('/api/dogs', async (req, res) => {
 // Return all open walk requests, including dog name, requested time, location, owner username
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
-        const [results] = await db.execute(``);
+        const [results] = await db.execute(`
+            SELECT 
+            `);
         res.json(results);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch open walk requests' });
