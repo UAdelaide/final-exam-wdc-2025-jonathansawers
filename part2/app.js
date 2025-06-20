@@ -100,10 +100,10 @@ app.get('/my-dogs', async (req,res) => {
   }
 
   try {
-
+    const 
   } catch (err) {
     console.error(err);
-    return res.status
+    return res.status(500).json({ error: "Failed to load dogs" });
   }
 
 });
