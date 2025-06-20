@@ -46,7 +46,7 @@ let db;
             ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
             ('carol123', 'carol@example.com', 'hashed789', 'owner'),
             ('jono', 'jono@jono.com', 'hashedpassword', 'owner'),
-            ('pratik', 'tutor@adelaide.edu.au', 'hashed1234', 'owner')
+            ('pratik', 'tutor@adelaide.edu.au', 'hashed1234', 'walker')
             `);
 
         await db.execute(`
