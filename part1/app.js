@@ -39,6 +39,7 @@ let db;
     });
 
     const [userCount] = await db.execute('SELECT COUNT(*) AS count FROM users');
+    if (userCount[0])
 
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
