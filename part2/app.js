@@ -86,7 +86,9 @@ app.post('/logout', async (req,res) => {
       console.error('Failed to destroy session');
       return res.status(500).send("Could not destroy session");
     }
+    // Clear session id cookie
     res.clearCookie('connect.sid');
+    // Redirect user to index.html
     return res.redirect('/');
   });
 });
