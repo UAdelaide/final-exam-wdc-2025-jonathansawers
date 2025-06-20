@@ -140,7 +140,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 COUNT(DISTINCT wrt.rating_id) AS total_ratings,
                 ROUND(AVG(wrt.rating), 1) AS average_rating,
                 COUNT(DISTINCT CASE
-                    WHEN wrq.status = 'completed' AND wa.status = 'accepted' THEN wrq.request_id
+                    WHEN wrq.status = 'completed' THEN wrq.request_id
                     ELSE NULL
                 END) AS completed_walks
             FROM Users u
