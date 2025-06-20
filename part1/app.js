@@ -131,7 +131,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 });
 
 // /api/walkers/summary
-// Return a summary of each walker with their avg rating/number of completed walks
+// Return a summary of each walker with their avg rating and the number of completed walks
 app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [results] = await db.execute(`
