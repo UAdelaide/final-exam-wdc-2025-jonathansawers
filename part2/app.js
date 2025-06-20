@@ -97,7 +97,7 @@ app.get('/logout', async (req,res) => {
 app.get('/my-dogs', async (req,res) => {
   // Check that user id exists
   if (!req.session.user_id) {
-    return res.status(401).json({ error:'no session' });
+    return res.status(401).json({ error: 'no session' });
   }
 
   // Try return of dog id/name
