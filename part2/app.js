@@ -62,7 +62,7 @@ app.post('/login', async (req, res) => {
         }
         return res.redirect('/walker-dashboard.html');
     } catch (err) {
-        res.status(500).json({ error: 'Failed to fetch dogs' });
+        res.status(500).json({ error: 'An error occured' });
     }
 });
 
