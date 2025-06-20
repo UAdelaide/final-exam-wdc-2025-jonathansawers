@@ -22,8 +22,8 @@
                 return {
                     dogImg: '',
                     buttons: Array.from({ length: 10 }, () => ({
-                        top: Math.random() * 20,
-                        left: Math.random() * 60
+                        top: Math.random() * 200,
+                        left: Math.random() * 600
                     }))
                 };
             },
@@ -36,7 +36,7 @@
                 },
                 moveButton(index) {
                     this.buttons[index].top = Math.random() * 200;
-                    this.buttons[index].left = Math.random() * 60;
+                    this.buttons[index].left = Math.random() * 600;
                 }
             },
             mounted() {
