@@ -47,7 +47,15 @@
         const user = ref(null);
 
         async function getCurrentUser() {
-          
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) {
+              throw new Error('failed to get user info');
+            }
+            
+          } catch (err){
+            error.value = 'Unable to fetch user info';
+          }
         }
 
         async function loadWalkRequests() {
